@@ -1,0 +1,118 @@
+\documentclass{article}
+\input{header}
+
+\title{COMS 4111 Intro to DB HW2}
+\author{Name (UNI)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+
+\pagebreak
+
+% Right!
+\section{Relational Algebra}
+
+Use the math mode to write relational algebra: check  mathematical symbols \href{https://www.caam.rice.edu/~heinken/latex/symbols.pdf}{here} and math mode \href{https://www.overleaf.com/learn/latex/Mathematical_expressions}{here}. 
+E.g., to use inline math mode, place mathematical symbols inside \$ ... \$.\\
+All relational algebra symbols:
+Projection: $\pi$, Selection: $\sigma$, Renaming: $\rho$, Join: $\bowtie$, Cross Product: $\times$, Union: $\cup$, Difference: $-$, Intersection: $\cap$, and: $\wedge$, or: $\vee$.\\
+Example relational algebra: Find all the companies whose stocks are held by person with ssn=1. $\pi_{Holding.companyid}((\sigma_{ssn=1}(Person))\bowtie_{Person.ssn = Holding.ssn} Holding)$
+
+\subsection{Q1.1}
+Your answer here.
+
+
+\subsection{Q1.2}
+Your Answer here.
+
+
+\subsection{Q1.3}
+Your Answer here.
+
+\newpage
+
+
+
+\section{More Relational Algebra}
+
+Use the tabular package to create table. Check the tutorial of tubular \href{https://www.overleaf.com/learn/latex/Tables}{here}.
+Example table T1:
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ A & B & C  \\ 
+ \hline
+ 1 & x & a \\ 
+ \hline
+ 2 & y & c\\ 
+ \hline
+ 2 & y & b\\ 
+ \hline
+ 2 & z & c\\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Q2.1}
+Your answer here.
+
+
+\subsection{Q2.2}
+Your Answer here.
+
+
+\subsection{Q2.3}
+Your Answer here.
+
+
+\subsection{Q2.4}
+Your Answer here.
+
+
+\subsection{Q2.5}
+Your Answer here.
+
+
+
+\subsection{Q2.6}
+Your Answer here.
+
+
+\newpage
+
+
+
+\section{SQL}
+
+Write your SQL in the verbatim environment: place your SQL query in\\  \symbol{92}begin\{verbatim\} ...SQL ... \symbol{92}end\{verbatim\}\\
+Example SQL query: Find the total number of employees for each city:
+
+\begin{verbatim}
+SELECT city, COUNT(*)
+FROM Store
+GROUP BY city
+\end{verbatim}
+
+\subsection{Q3.1}
+Your Answer here.
+
+
+\subsection{Q3.2}
+Your Answer here.
+
+
+\subsection{Q3.3}
+Your Answer here.
+
+
+
+
+
+
+
+\end{document} 
