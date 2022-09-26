@@ -1,15 +1,14 @@
 # Homework 2
 
 * Assigned: 9/29
-* Due: 10/7 11:59PM (NO GRACE DAYS!!)
+* Due: 10/6 11:59PM (No grace days/late submissions accepted at all beyond 10/7 11:59 PM EST)
 * Worth 3.75% of your grade
 * Done and submitted individually (as with all the homeworks) **via [Gradescope](https://www.gradescope.com)**
 
 
 ## Submission
 
-1. You will write your answers using the [following Overleaf latex template](https://www.overleaf.com/read/mvhfmrqpnqbs). Clone the template and edit it.   Hand writing or alternative submission formats are NOT accecptable.
-2. You will then submit the compiled PDF on GradeScope
+You will write your answers on GradeScope and submit there.
 
 
 ## 1. Relational Algebra
@@ -64,10 +63,10 @@ B | C | D
 3 | x | a
 
 
-Write the result table for the relational algebra expressions in a similar with T1 and T2:
+Write the result table for the relational algebra expressions given T1 and T2.
 
-Note: Here, we assume the attributes whose values are all numbers are the same type: integers
-and all the letters are the same type: char. If the result table is empty, write the schema of the table.
+Note: We assume the attributes whose values are all numbers are the same type (integers),
+and all the letters are the same type (char). If the result table is empty, write the schema of the table.
 
 
 1. π<sub>A,B</sub>(T1)
@@ -85,7 +84,7 @@ and all the letters are the same type: char. If the result table is empty, write
 
 ## 3. SQL
 
-**(2 points each, 6 points total)**
+**(2 points each, 14 points total)**
 
 Here are three relationship, (primary keys are in **bold**):
 
@@ -95,7 +94,7 @@ Here are three relationship, (primary keys are in **bold**):
 
 * Supply(**storeid**, **g_id**)
 
-### Requirements:
+### 3.1
 
 First, describe the meaning of following relational algebra expressions in one or two sentences.
 Second, translate the following relational algebra expressions in SQL. Make sure your SQL can be executed.
@@ -106,3 +105,21 @@ Second, translate the following relational algebra expressions in SQL. Make sure
 2. π<sub>s_name</sub>(((σ<sub>g_name = "pencil"</sub>Goods) ⨝ Supply) ⨝ Store)
 
 3. π<sub>s_name, city</sub>((Supply/π<sub>g_id</sub>(σ<sub>storeid='0808'</sub>(Supply)))⨝ Store)
+
+
+
+1. \pi_{storeid, s_name}(\sigma_{employee_number<=100 or city = "New York"}(Store))
+
+2. \pi_{s_name}(((\sigma_{g_name = "pencil"}Goods) \bowtie Supply) \bowtie Store)
+
+3. \pi_{s_name, city}((Supply/\pi_{g_id}(\sigma_{storeid='0808'}(Supply)))\bowtie Store)
+
+
+### 3.2
+
+Write SQL queries for the following english questions.
+
+1. Find stores in the city "NYC" that supply goods named "Pokemon".
+2. Find stores that supply at least two types of goods: those named "Pokemon" and those named "Digimon"
+3. How many stores in the city "NYC" have at least 10 employees and supply goods that cost less than 10 dollars?
+4. Return the number of goods that are supplied by every store in the city of "Springfield".
