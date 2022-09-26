@@ -42,7 +42,7 @@ Construct relational algebra for the following queries:
 
 ## 2. More Relational Algebra
 
-**(2 point each, 10 points total)**
+**(2 point each, 12 points total)**
 
 T1
 
@@ -82,9 +82,9 @@ and all the letters are the same type (char). If the result table is empty, writ
 6. T1 ⨝<sub>T1.A&gt;T2.B</sub> (σ<sub>B&ne;2</sub>(T2))
 
 
-## 3. SQL
+## 3. Relational Algebra -> SQL
 
-**(2 points each, 14 points total)**
+**(2 points each, 6 points total)**
 
 Here are three relationship, (primary keys are in **bold**):
 
@@ -94,11 +94,7 @@ Here are three relationship, (primary keys are in **bold**):
 
 * Supply(**storeid**, **g_id**)
 
-### 3.1
-
-First, describe the meaning of following relational algebra expressions in one or two sentences.
-Second, translate the following relational algebra expressions in SQL. Make sure your SQL can be executed.
-
+For each of the following relational algebra expressions, first describe its meaning. Second, translate the expression to SQL. Make sure your SQL can be executed.
 
 1. π<sub>storeid, s_name</sub>(σ<sub>employee_number<=100 or city = "New York"</sub>(Store))
 
@@ -107,17 +103,11 @@ Second, translate the following relational algebra expressions in SQL. Make sure
 3. π<sub>s_name, city</sub>((Supply/π<sub>g_id</sub>(σ<sub>storeid='0808'</sub>(Supply)))⨝ Store)
 
 
+## 4. English Description -> SQL
 
-1. \pi_{storeid, s_name}(\sigma_{employee_number<=100 or city = "New York"}(Store))
+**(2 points each, 8 points total)**
 
-2. \pi_{s_name}(((\sigma_{g_name = "pencil"}Goods) \bowtie Supply) \bowtie Store)
-
-3. \pi_{s_name, city}((Supply/\pi_{g_id}(\sigma_{storeid='0808'}(Supply)))\bowtie Store)
-
-
-### 3.2
-
-Write SQL queries for the following english questions.
+Write SQL queries for the following English descriptions using the same relationships in Q3:
 
 1. Find stores in the city "NYC" that supply goods named "Pokemon".
 2. Find stores that supply at least two types of goods: those named "Pokemon" and those named "Digimon"
