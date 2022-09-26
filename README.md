@@ -109,7 +109,7 @@ For each of the following relational algebra expressions, first describe its mea
 
 Write SQL queries for the following English descriptions using the same relationships in Q3:
 
-1. Find stores in the city "NYC" that supply goods named "Pokemon".
-2. Find stores that supply at least two types of goods: those named "Pokemon" and those named "Digimon"
+1. Find stores in the city "NYC" that supply goods named "Pokemon". Return `storeid` and the associated `s_name`.
+2. Find stores that supply at least two types of goods: those named "Pokemon" and those named "Digimon." Return `storeid` and the associated `s_name`.
 3. How many stores in the city "NYC" have at least 10 employees and supply goods that cost less than 10 dollars?
 4. Return the number of goods that are supplied by every store in the city of "Springfield".
