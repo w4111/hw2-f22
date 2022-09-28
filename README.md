@@ -111,5 +111,5 @@ Write SQL queries for the following English descriptions using the same relation
 
 1. Find stores in the city "NYC" that supply goods named "Pokemon". Return `storeid` and the associated `s_name`.
 2. Find stores that supply at least two types of goods: those named "Pokemon" and those named "Digimon." Return `storeid` and the associated `s_name`.
-3. How many stores in the city "NYC" have at least 10 employees and supply goods that cost less than 10 dollars?
-4. Return the number of goods that are supplied by every store in the city of "Springfield".
+3. How many stores in the `city` "NYC" have at least 10 employees (as specified by `employee_number`) and supply goods that cost less than 10 dollars (as specified by `price`)? Return a number.
+4. Return the number of goods that are supplied by every store in the `city` "Springfield". Return a number.
