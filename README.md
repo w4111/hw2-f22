@@ -94,7 +94,7 @@ Here are three relationship, (primary keys are in **bold**):
 
 * Supply(**storeid**, **g_id**)
 
-For each of the following relational algebra expressions, first describe its meaning. Second, translate the expression to SQL. Make sure your SQL can be executed.
+For each of the following relational algebra expressions, first describe its meaning. Second, translate the expression to SQL. Make sure your SQL can be executed in Postgres.
 
 1. π<sub>storeid, s_name</sub>(σ<sub>employee_number<=100 or city = "New York"</sub>(Store))
 
