@@ -11,15 +11,12 @@ Or there is another solution:
 
 ## 1.2 
 
-p(ManagerCompany(ssn, companyid), π <sub> Person.ssn, Holding.companyid</sub>(Person ⨝<sub>Person.managerid = Holding.ssn</sub> Holding))
+p(PersonStocks, π<sub>Person.ssn, Holding.companyid</sub> (Person ⨝<sub>Person.ssn = Holding.ssn</sub> Holding))
 
+p(ManagerStocks, π<sub>Person.ssn, Holding.companyid</sub> (Person ⨝<sub>Person.managerid = Holding.ssn</sub> Holding))
 
+π<sub>ssn</sub>(Person) - π<sub>ssn</sub>(PersonStocks ∩ ManagerStocks)
 
-p(NotCover, π <sub>ssn</sub>(ManageCompany- π <sub> ssn, companyid</sub> ( Holding)))
-
-
-
-Cover ←  π<sub>ssn</sub>(Person)- NotCover
 
 ## 1.3
 
