@@ -109,7 +109,7 @@ where employee_numer <= 100 or city = "New York"
 description: Find the name of the stores which supply pencils.
 
 ```sql
-select dinstinct s_name 
+select distinct s_name 
 from Store, Goods, Supply
 where Goods.g_id = "pencil" 
     and Goods.g_id = Supply.g_id
@@ -136,11 +136,12 @@ where not exists(
 )
 ```
 
-* Store(**storeid**, s_name, employee_number, city)
-
-* Goods(**g_id**, g_name, price)
-
-* Supply(**storeid**, **g_id**)
+Breakdown in English
+```
+Stores such that
+      there does not exist a good (that the store of ID '0808' supplies)
+            that's not supplied
+```
 
 ## 4.1
 Find stores in the city "NYC" that supply goods named "Pokemon". Return `storeid` and the associated `s_name`.
@@ -186,7 +187,8 @@ How many stores in the city "NYC" have at least 10 employees (as specified by em
 ```sql
 select count(distinct storeid)
 from Store, Goods, Supply
-where Store.employee_number >= 10 and price < 10 and 
+where Store.city = 'NYC' and
+      Store.employee_number >= 10 and price < 10 and 
       Store.storeid = Supply.storeid and
       Supply.g_id = Goods.g_id
 
@@ -196,9 +198,8 @@ where Store.employee_number >= 10 and price < 10 and
 Return the number of goods that are supplied by every store in the city "Springfield". Return a number.
 
 ```sql
-select count(distinct Goods.gid)
-from Store, Supply, Goods
+select count(distinct Supply.g_id)
+from Store, Supply
 where Store.s_name = "Springfield" and
-      Store.storeid = Supply.storeid and 
-      Supply.g_id = Goods.g_id
+      Store.storeid = Supply.storeid
 ```
